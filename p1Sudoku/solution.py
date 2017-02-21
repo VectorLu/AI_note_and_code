@@ -132,6 +132,8 @@ def search(values):
 
     # Now use recursion to solve each one of the Resulting sudokus, and if one returns a value (not False), return that answer!
     for value in values[s]:
+        # Copy the Sudoku to protect the original Sudoku
+        # in case that there is no solution.
         new_sudoku = values.copy()
         new_sudoku[s] = value
         attempt = search(new_sudoku)
@@ -139,4 +141,4 @@ def search(values):
             return attempt
 
 
-display(search(grid_values(initial_harder_digits)))
+# display(search(grid_values(initial_harder_digits)))
