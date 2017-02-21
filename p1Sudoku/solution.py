@@ -94,6 +94,13 @@ def only_choice(values):
 # display(after_only_choice_sudoku)
 
 def reduce_puzzle(values):
+    """
+    Iterate eliminate() and only_choice(). If at some point, there is a box with no available values, return False.
+    If the sudoku is solved, return the sudoku.
+    If after an iteration of both functions, the sudoku remains the same, return the sudoku.
+    Input: A sudoku in dictionary form.
+    Output: The resulting sudoku in dictionary form.
+    """
     stalled = False
     while not stalled:
         # Check how many boxes have a determined value
