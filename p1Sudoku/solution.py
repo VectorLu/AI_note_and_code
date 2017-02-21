@@ -22,9 +22,9 @@ def grid_values(grid):
     return dict(zip(boxes, values))
 
 
-initial_sudoku = '..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..'
+initial_digits = '..3.2.6..9..3.5..1..18.64....81.29..7.......8..67.82....26.95..8..2.3..9..5.1.3..'
 
-# temp_sudoku = grid_values(initial_sudoku)
+initial_sudoku = grid_values(initial_digits)
 # display(temp_sudoku)
 
 def eliminate(values):
@@ -47,8 +47,8 @@ def eliminate(values):
 
     return values
 
-temp_sudoku = eliminate(grid_values(initial_sudoku))
-display(temp_sudoku)
+# temp_sudoku = eliminate(grid_values(initial_sudoku))
+# display(temp_sudoku)
 
 def only_choice(values):
     """
@@ -97,5 +97,13 @@ def reduce_puzzle(values):
 
         # Check how many boxes have a determined value, to compare
         solved_values_after = len([box for box in values.keys() if len(values[box]) == 1])
-
+        # If no new values were added, stop the loop.
+        stalled = (solved_values_before == solved_values_after)
+        # Sanity check, return False if there is a box with zero available values:
+        if len([box for box in values.keys() if len(values[box]) == 0]):
+            return False
     return values
+
+# display(initial_sudoku)
+# stalled_values = reduce_puzzle(initial_sudoku)
+# display(stalled_values)
