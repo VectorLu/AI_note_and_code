@@ -126,7 +126,7 @@ def reduce_puzzle(values):
 # display(stalled_values)
 
 def search(values):
-    "Using depth-first search and paopagation, create a search tree and solve the sudoku."
+    "Using depth-first search and propagation, create a search tree and solve the sudoku."
     # First, reduce the puzzle using the previous function
     values = reduce_puzzle(values)
     if values is False:
