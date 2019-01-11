@@ -1,4 +1,2 @@
-# AIND_Learning
-Udacity Artificial Intelligence Nanodegree Leanring Codes and Notes
-
-// Test GitHub public contribute
+# AI_note_and_code
+Notes and Codes of Artificial Intelligence
